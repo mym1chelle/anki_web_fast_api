@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "anki-web-fast-api"
+version = "0.1.0"
+description = ""
+authors = ["Timur <81976283+mym1chelle@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "anki_web_fast_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.89.1"}
+sqlalchemy = {extras = ["asyncio"], version = "^1.4.46"}
+python-dotenv = "^0.21.0"
+alembic = "^1.9.2"
+aiosqlite = "^0.18.0"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+python-multipart = "^0.0.5"
+pytest-asyncio = "^0.20.3"
+pytest = "^7.2.1"
+fastapi-users = {extras = ["sqlalchemy"], version = "^10.3.0"}
+
+[tool.pytest.ini_options]
+asyncio_mode='auto'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
