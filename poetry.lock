@@ -1212,6 +1212,20 @@ anyio = ">=3.4.0,<5"
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyaml"]
 
 [[package]]
+name = "supermemo2"
+version = "2.0.0"
+description = "Implemented the SM-2 algorithm for spaced repetition learning."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "supermemo2-2.0.0.tar.gz", hash = "sha256:3b36d2b911bb6e68e95f832e2cfd628ed0f2d5aa852c1106d4d80f9b9b146207"},
+]
+
+[package.dependencies]
+attrs = "*"
+
+[[package]]
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -1482,4 +1496,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "06cf13994f2402a623bb696eb2a1b51676c832fd748f17b2f65a42fcae0a3dfb"
+content-hash = "25a45f24fe0598e347b521237f199996e4733f1450a9124cb7ed141dbf154f8c"

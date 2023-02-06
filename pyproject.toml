@@ -19,6 +19,7 @@ python-multipart = "^0.0.5"
 pytest-asyncio = "^0.20.3"
 pytest = "^7.2.1"
 fastapi-users = {extras = ["sqlalchemy"], version = "^10.3.0"}
+supermemo2 = "^2.0.0"
 
 [tool.pytest.ini_options]
 asyncio_mode='auto'

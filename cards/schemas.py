@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from users.schemas import UserName
 
 
@@ -31,4 +31,9 @@ class Card(BaseCard):
 
 class CardWithCreator(BaseCard):
     created_by: UserName
+
+
+class CardAnswer(BaseModel):
+    card_id: int = Field(ge=1)
+    quality: int = Field(ge=1, le=5)
 

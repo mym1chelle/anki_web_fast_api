@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, ForeignKey, DateTime, Text, Float
+from sqlalchemy import Column, Integer, ForeignKey, DateTime, Text, Float, Date
 from sqlalchemy.orm import relationship
 import datetime
 from random import randint
@@ -22,5 +22,5 @@ class Card(Base):
     easiness = Column(Float)
     interval = Column(Integer)
     repetitions = Column(Integer)
-    review_date = Column(DateTime)
+    review_date = Column(Date)
     random_num = Column(Integer, default=randint(1, 2000))

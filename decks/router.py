@@ -76,3 +76,4 @@ async def get_cards_to_study(
     ).where(Card.review_date.is_(None) | Card.review_date <= datetime.now()).order_by(Card.random_num).limit(1)
     result = await session.execute(query)
     return result.scalars().all()
+
