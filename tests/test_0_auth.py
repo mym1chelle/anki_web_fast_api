@@ -2,7 +2,8 @@ from conftest import client
 from httpx import AsyncClient
 
 
-def test_auth():
+def test_regester():
+    """Test register new user"""
     response = client.post(
         url='/users/registration/',
         json={
@@ -17,7 +18,8 @@ def test_auth():
     assert new_user['decks'] == []
 
 
-async def test_register(async_client: AsyncClient):
+async def test_rauth(async_client: AsyncClient):
+    """Test auth created user with Bearer token"""
     response = await async_client.post(
         url='/users/token/',
         data={"username": "new_test_user", "password": "1a2b3c"}

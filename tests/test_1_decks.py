@@ -2,6 +2,7 @@ from httpx import AsyncClient
 
 
 async def test_create_deck(async_client: AsyncClient):
+    """Test create deck (auth user)"""
     response = await async_client.post(
         url='/users/token/',
         data={"username": "new_test_user", "password": "1a2b3c"}
