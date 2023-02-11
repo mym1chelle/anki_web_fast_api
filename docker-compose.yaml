@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  anki_db:
+    container_name: anki_database
+    image: postgres
+    env_file:
+      - ".env"
+    environment:
+      POSTGRES_PASSWORD: $PASSWORD_DB
+      POSTGRES_USER: $USER_DB
+      POSTGRES_DB: $NAME_DB
+    restart: always
+    ports:
+     - "5432"
+    networks:
+      - botnet
+    volumes:
+      - ./postgresql:/var/lib/postgresql
+
+  anki:
+    container_name: fast_api_anki
+    build:
+      context: .
+    command:  bash -c "poetry run alembic revision --autogenerate && poetry run alembic upgrade head && poetry run uvicorn main:app --host 0.0.0.0"
+    ports:
+      - "8000:8000"
+    networks:
+      - botnet
+    restart: always
+    env_file:
+      - ".env"
+    depends_on:
+      - anki_db
+
+
+networks:
+  botnet:
+
+    driver: bridge

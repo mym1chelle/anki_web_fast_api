@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "anki-web-fast-api"
+name = "anki-web-fast-api_test"
 version = "0.1.0"
 description = ""
 authors = ["Timur <81976283+mym1chelle@users.noreply.github.com>"]
 readme = "README.md"
-packages = [{include = "anki_web_fast_api"}]
+packages = []
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -20,6 +20,8 @@ pytest-asyncio = "^0.20.3"
 pytest = "^7.2.1"
 fastapi-users = {extras = ["sqlalchemy"], version = "^10.3.0"}
 supermemo2 = "^2.0.0"
+asyncpg = "^0.27.0"
+psycopg2-binary = "^2.9.5"
 
 [tool.pytest.ini_options]
 asyncio_mode='auto'
